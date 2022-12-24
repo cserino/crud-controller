@@ -1,0 +1,17 @@
+{
+  "name": "crud-controller",
+  "description": "Generate crud functions for Kysely databases",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "Chris Serino <cserino@hey.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "hono": "*",
+    "kysely": "*",
+    "zod": "*"
+  }
+}
+
