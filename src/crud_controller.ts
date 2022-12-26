@@ -379,7 +379,7 @@ export class CrudController<Models extends ModelsObject, C> {
     if (!data) {
       throw CrudError.notFound();
     }
-    return data;
+    return data as Models[Model];
   }
 
   loader<Model extends ModelOf<Models>>(
