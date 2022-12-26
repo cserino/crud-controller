@@ -4,5 +4,5 @@ CrudController generates functions that
 
 ## Example Usage
 
-See the examples in `examples/`
+See the examples in `examples/`.
 
