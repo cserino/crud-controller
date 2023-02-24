@@ -10,6 +10,12 @@ const showThing = crud.show("things"); // generates a show function for the "thi
 await showThing({ params: { show_id: 1 } }); // does a SELECT * FROM things WHERE id = 1 and returns the result as an object
 ```
 
+## Installation
+
+```
+npm install crud-controller
+```
+
 ## Context Adapter
 
 The first thing you will need to set up is a context adapter. This object is used to interface between CrudController and whatever context your code is running in.
@@ -49,6 +55,7 @@ This function lists all records for the given context and table.
 ### create
 
 This function inserts a record for the given context and table. It requires an attribute picker describing how the context maps to each column of the table:
+
 ```ts
 // given this model:
 const models = {
@@ -85,15 +92,15 @@ await createThing({
 // would run this SQL:
 
 // INSERT INTO things (thing_id, name, description, created_at, updated_at)
-    VALUES (randomUUID(), 'My thing', NULL, NOW(), NOW())
+VALUES(randomUUID(), "My thing", NULL, NOW(), NOW());
 ```
 
 The attributes picker has several options you can use:
 
-  - **payload** - take the value from the body of the request
-  - **param** - take the value from the params (where the param name matches this column's name)
-  - **get** - take the value from the context (using `adapter.get`)
-  - **arg** - take the value from the argument object
+- **payload** - take the value from the body of the request
+- **param** - take the value from the params (where the param name matches this column's name)
+- **get** - take the value from the context (using `adapter.get`)
+- **arg** - take the value from the argument object
 
 For example,
 
@@ -139,4 +146,3 @@ This function deleetes first record for the given context and table.
 ## Example Usage
 
 See the examples in `examples/`.
-
